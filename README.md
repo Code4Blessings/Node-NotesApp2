@@ -57,3 +57,9 @@ module.exports = add
 2. Create a getNotes function that returns "Your notes.."
 3. Export getNotes function
 4. From app/js load in and call the function printing message to console
+
+## Validator 
+- A dependency used to validate several different types of apps. Returns true or false for validity
+
+https://www.npmjs.com/package/validator
+
