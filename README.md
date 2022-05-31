@@ -71,3 +71,14 @@ https://www.npmjs.com/package/validator
 4. Test your work
 
 **Bonus:** Use docs to mess around with other styles. Make text bold and inversed.
+
+#### Yargs
+- Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
+
+https://www.npmjs.com/package/yargs
+
+#### Challenge: Add two new commands
+
+1. Setup command to support "List" command (print placeholder for now).
+2. Setup command to support "read" command (print placeholder for now).
+3. Test your work by running both commands and ensure correct output.
