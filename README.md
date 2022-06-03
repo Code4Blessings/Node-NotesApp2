@@ -82,3 +82,48 @@ https://www.npmjs.com/package/yargs
 1. Setup command to support "List" command (print placeholder for now).
 2. Setup command to support "read" command (print placeholder for now).
 3. Test your work by running both commands and ensure correct output.
+
+# Storing JSON
+
+const fs = require('fs')
+
+const book = {
+    title: 'Ego is the Enemy',
+    author: 'Ryan Holiday'
+}
+
+- This takes in an object or an array and returns a string representation
+
+```
+const bookJSON = JSON.stringify(book)
+console.log(bookJSON)
+```
+- This is a **string** not an object.  If you try to access it like an object, it will not work.
+
+**JSON.parse()** - takes in the JSON string and gives us the object
+
+```
+const parsedData = JSON.parse(bookJSON)
+console.log(parsedData.author) //This method allows access to the object
+
+fs.writeFileSync('1-JSON.json', bookJSON)
+
+const dataBuffer = fs.readFileSync('1-JSON.json')
+const dataJSON = dataBuffer.toString()
+const data = JSON.parse(dataJSON)
+
+console.log(dataBuffer)
+console.log(dataJSON)
+console.log(data.title)
+
+```
+
+#### Challenge: Storing JSON (See playfround directory)
+
+1. Get sample JSON from this repo
+https://gist.github.com/andrewjmead/c7d26a25ddc793f4210201747a9ba429
+
+2. Load and parse the JSON data
+3. Change the name and age property using your info
+4. Stringify the changed object and overwrite the original data
+5. Test your work by viewing data in the JSON file.
