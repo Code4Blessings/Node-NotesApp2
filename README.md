@@ -128,10 +128,24 @@ https://gist.github.com/andrewjmead/c7d26a25ddc793f4210201747a9ba429
 4. Stringify the changed object and overwrite the original data
 5. Test your work by viewing data in the JSON file.
 
-#### Challenge: Setup Command Option and Function
+#### Challenge: Setup RemoveNote Function (3 parts)
+
+## Part 1: Setup Command Option and Function
 
 1. Setup the remonve command to take a required "--title" option
 2. Create and export a removeNote function from notes.js
 3. Call removeNote in remove command handler
 4. Have removeNote log the title of the note to be removed
 5. Test your work using: app.js remove --title="some title"
+
+## Part 2: Wire Up removeNote
+
+1. Load existing notes
+2. Use array filter method to remove the matching note (if any)
+3. Save the newly created array
+4. Test your work with a title that exists and a title that doesn't exist.
+
+## Part 3: Use Chalk to Provide Useful logs for remove
+
+1. If a note is removed, print "Note removed!" with a green background
+2. If a note is NOT removed, print "No such note found" with a red background
