@@ -2,26 +2,23 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 
-const getNotes = () => {
-    return 'Your notes...';
-}
+const getNotes = () => 'Your notes...'
+
 
 //Create Note
 
 const addNote = (title, body) => {
     const notes = loadNotes()
-    const duplicateNotes = notes.filter((note) => {
-        return note.title === title
-    })
+    const duplicateNotes = notes.filter(note => note.title === title)
     if(duplicateNotes.length === 0) {
          notes.push({
             title: title,
             body: body
         })
         saveNotes(notes)
-        console.log('New note added')
+        console.log(chalk.bgGreen('New note added'))
     }else {
-        console.log('Note title already exists')
+        console.log(chalk.bgRed('Note title already exists'))
     }
 }
 
@@ -46,9 +43,7 @@ const removeNote = (title) => {
    //Load notes 
    const notes = loadNotes();
    //Make a new array with the removed title filtered out
-   const keptNotes = notes.filter((note) => {
-       return note.title !== title
-   })
+   const keptNotes = notes.filter(note => note.title !== title)
    if(notes.length > keptNotes.length) {
         saveNotes(keptNotes)
         console.log(chalk.bgGreen('Note removed'))
