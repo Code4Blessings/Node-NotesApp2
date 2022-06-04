@@ -127,3 +127,11 @@ https://gist.github.com/andrewjmead/c7d26a25ddc793f4210201747a9ba429
 3. Change the name and age property using your info
 4. Stringify the changed object and overwrite the original data
 5. Test your work by viewing data in the JSON file.
+
+#### Challenge: Setup Command Option and Function
+
+1. Setup the remonve command to take a required "--title" option
+2. Create and export a removeNote function from notes.js
+3. Call removeNote in remove command handler
+4. Have removeNote log the title of the note to be removed
+5. Test your work using: app.js remove --title="some title"
