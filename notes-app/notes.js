@@ -1,15 +1,6 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-// ## Challenge: Wire up list command
-
-// 1. Create and export listNotes from notes.js
-//     - "Your notes" using chalk
-//     - Print note title for each note
-// 2. Call listNotes from the command handler
-// 3. Test your work
-
-
 const getNotes = () => 'Your notes...'
 
 
@@ -17,9 +8,9 @@ const getNotes = () => 'Your notes...'
 
 const addNote = (title, body) => {
     const notes = loadNotes()
-    const duplicateNotes = notes.filter(note => note.title === title)
-    
-        if(duplicateNotes.length === 0) {
+    // const duplicateNotes = notes.filter(note => note.title === title) - finds any duplicate notes, we need to scan for duplicate and then stop which is why we will use the below function
+    const duplicateNote = notes.find(note => note.title === title)
+        if(!duplicateNotes) {
          notes.push({
             title: title,
             body: body
