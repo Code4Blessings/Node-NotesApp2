@@ -150,3 +150,11 @@ https://gist.github.com/andrewjmead/c7d26a25ddc793f4210201747a9ba429
 
 1. If a note is removed, print "Note removed!" with a green background
 2. If a note is NOT removed, print "No such note found" with a red background
+
+## Challenge: Wire up list command
+
+1. Create and export listNotes from notes.js
+    - "Your notes" using chalk
+    - Print note title for each note
+2. Call listNotes from the command handler
+3. Test your work
