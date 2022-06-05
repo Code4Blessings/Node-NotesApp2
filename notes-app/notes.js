@@ -1,15 +1,6 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-// ## Challenge: Wire Up Read Command
-
-// 1. Setup --title option for read command
-// 2. Create readNote in notes.js
-//     - Search for note by title
-//     - Find note amd print title (styled) and body(plain)
-//     - No note found? Print error in red
-// 3. Have the command handler call the function
-// 4. Test your work by running a couple of comments
 
 const getNotes = () => 'Your notes...'
 
@@ -73,8 +64,15 @@ const listNotes = () => {
 
 //Read Note
 
-const readNote = () => {
-    
+const readNote = (title) => {
+    const notes = loadNotes();
+    const findNote = notes.find(note => note.title === title)
+    if(findNote) {
+        console.log(chalk.bgBlue(findNote.title))
+        console.log(chalk.yellow.inverse(findNote.body))
+    }else {
+        console.log('No note found')
+    }   
 }
 
 
