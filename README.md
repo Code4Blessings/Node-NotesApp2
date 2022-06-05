@@ -158,3 +158,13 @@ https://gist.github.com/andrewjmead/c7d26a25ddc793f4210201747a9ba429
     - Print note title for each note
 2. Call listNotes from the command handler
 3. Test your work
+
+## Challenge: Wire Up Read Command
+
+1. Setup --title option for read command
+2. Create readNote in notes.js
+    - Search for note by title
+    - Find note amd print title (styled) and body(plain)
+    - No note found? Print error in red
+3. Have the command handler call the function
+4. Test your work by running a couple of comments

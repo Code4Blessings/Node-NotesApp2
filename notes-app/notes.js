@@ -1,8 +1,17 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const getNotes = () => 'Your notes...'
+// ## Challenge: Wire Up Read Command
 
+// 1. Setup --title option for read command
+// 2. Create readNote in notes.js
+//     - Search for note by title
+//     - Find note amd print title (styled) and body(plain)
+//     - No note found? Print error in red
+// 3. Have the command handler call the function
+// 4. Test your work by running a couple of comments
+
+const getNotes = () => 'Your notes...'
 
 //Create Note
 
@@ -10,7 +19,7 @@ const addNote = (title, body) => {
     const notes = loadNotes()
     // const duplicateNotes = notes.filter(note => note.title === title) - finds any duplicate notes, we need to scan for duplicate and then stop which is why we will use the below function
     const duplicateNote = notes.find(note => note.title === title)
-        if(!duplicateNotes) {
+        if(!duplicateNote) {
          notes.push({
             title: title,
             body: body
@@ -62,11 +71,18 @@ const listNotes = () => {
     })
 }
 
+//Read Note
+
+const readNote = () => {
+    
+}
+
 
 
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 }
