@@ -1,6 +1,14 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+// ## Challenge: Wire up list command
+
+// 1. Create and export listNotes from notes.js
+//     - "Your notes" using chalk
+//     - Print note title for each note
+// 2. Call listNotes from the command handler
+// 3. Test your work
+
 
 const getNotes = () => 'Your notes...'
 
@@ -10,7 +18,8 @@ const getNotes = () => 'Your notes...'
 const addNote = (title, body) => {
     const notes = loadNotes()
     const duplicateNotes = notes.filter(note => note.title === title)
-    if(duplicateNotes.length === 0) {
+    
+        if(duplicateNotes.length === 0) {
          notes.push({
             title: title,
             body: body
@@ -52,10 +61,21 @@ const removeNote = (title) => {
    }
 }
 
+//List Notes
+
+const listNotes = () => {
+    console.log(chalk.bgWhite('Your Notes'))
+    const lists = loadNotes()
+    lists.forEach((list) => {
+        console.log(chalk.bgBlue(list.title)) 
+    })
+}
+
 
 
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }

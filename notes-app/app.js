@@ -1,17 +1,14 @@
 const yargs = require('yargs')
 const notes = require('./notes')
 
-// ## Part 3: Use Chalk to Provide Useful logs for remove
 
-// 1. If a note is removed, print "Note removed!" with a green background
-// 2. If a note is NOT removed, print "No such note found" with a red background
 
 //Customize yargs 
 yargs.version('1.1.0')
 
 //add, remove, read, list
 
-//Create add command
+//Add command
 yargs.command({
     command: 'add',
     describe: 'Add new note',
@@ -32,7 +29,7 @@ yargs.command({
     }
 })
 
-//Create remove command
+//Remove command
 
 yargs.command({
     command: 'remove',
@@ -44,21 +41,24 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function(argv) {
+    handler(argv) {
         notes.removeNote(argv.title)
     }
 })
 
-//Create list command
+//List command
 yargs.command({
     command: 'list',
     describe: 'List Notes',
+    builder: {
+        type: {}
+    },
     handler() {
-        console.log('List of notes')
+        notes.listNotes()
     }
 })
 
-//Create read command
+//Read command
 yargs.command({
     command: 'read',
     describe: 'Read note',
