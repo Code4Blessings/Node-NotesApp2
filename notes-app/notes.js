@@ -2,8 +2,6 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 
-const getNotes = () => 'Your notes...'
-
 //Create Note
 
 const addNote = (title, body) => {
@@ -78,7 +76,7 @@ const readNote = (title) => {
 
 
 module.exports = {
-    getNotes: getNotes,
+    
     addNote: addNote,
     removeNote: removeNote,
     listNotes: listNotes,
